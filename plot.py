@@ -27,10 +27,10 @@ def read_orig(origfile):
 def main():
     z_orig, f_orig = read_orig('src/ZF.txt')
     
-    length1 = [ 0.214  ,   0.15, 0.21 , 0.0214]
-    length2 = [ 0.13   ,   0.28, 0.13, 0.012]
-    radius1 = [ 0.08   ,   0.07, 0.09,  0.008]
-    radius2 = [ 0.09   ,   0.09, 0.08,  0.009]
+    length1 = [ 0.214,0.15, 0.21, 0.0214]
+    length2 = [ 0.13 ,0.28, 0.13, 0.012 ]
+    radius1 = [ 0.08 ,0.07, 0.09, 0.008 ]
+    radius2 = [ 0.09 ,0.09, 0.08, 0.009 ]
     samples = 16384*4
   
     for j in range(0, len(length1)):   
@@ -66,6 +66,7 @@ def main():
           plt.subplot(211)  
           plt.plot(freq,z)
           plt.xlim([10, 8000])
+          plt.ylim([0, 1.1])
           #plt.xscale('log')
           plt.grid(True, which="both", ls="-")
           plt.title('Impedance Faust Simulation v/s Real Instrument')
@@ -79,6 +80,7 @@ def main():
           plt.subplot(212)
           plt.plot(f_orig,z_orig)
           plt.xlim([10, 8000])
+          plt.ylim([0, 1.1])
           plt.grid(True, which="both", ls="-")
           #plt.xscale('log')
           plt.savefig('gen/test' + str(j) + '.png')

@@ -453,7 +453,7 @@ int main(int argc, char *argv[] )
     float *outputs[] = {out1, out2};    
     DSP.compute(nbsamples, 0, outputs);
  
-    ofstream out("outputs.txt");
+    ofstream out("gen/outputs.txt");
     write(&out, out1, nbsamples);
     write(&out, out2, nbsamples);
     out.close();      

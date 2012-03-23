@@ -10,10 +10,10 @@ ONE_OVER_RHO_C = 1.0 / (RHO * SOUND_SPEED);
 
 
 gate = button("Play"); // on-off
-length1 = hslider("Length_1", 27, 1, 35, 0.1);
-length2 = hslider("Length_2", 28, 1, 35, 0.1);
-radius1 = hslider("Radius_1", 9, 1, 20, 0.1);
-radius2 = hslider("Radius_2", 7, 1, 20, 0.1);
+length1 = hslider("Length_1", 27, 0, 35, 0.0001);
+length2 = hslider("Length_2", 28, 0, 35, 0.0001);
+radius1 = hslider("Radius_1", 9, 0, 20, 0.0001);
+radius2 = hslider("Radius_2", 7, 0, 20, 0.0001);
 
 
 //delays
