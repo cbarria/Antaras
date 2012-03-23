@@ -5,22 +5,23 @@ import("effect.lib"); //dcblocker
 //parameters
 RHO = 1.2;
 SOUND_SPEED = 343.54;
+TWO_SOUND_SPEED = 687.08;
 ONE_OVER_RHO_C = 1.0 / (RHO * SOUND_SPEED);
 
 
 gate = button("Play"); // on-off
-length1 = hslider("Length_1", 27, 1, 35, 0.1)*0.001;
-length2 = hslider("Length_2", 28, 1, 35, 0.1)*0.001;
-radius1 = hslider("Radius_1", 9, 1, 20, 0.1)*0.001;
-radius2 = hslider("Radius_2", 7, 1, 20, 0.1)*0.001;
+length1 = hslider("Length_1", 27, 1, 35, 0.1);
+length2 = hslider("Length_2", 28, 1, 35, 0.1);
+radius1 = hslider("Radius_1", 9, 1, 20, 0.1);
+radius2 = hslider("Radius_2", 7, 1, 20, 0.1);
 
 
 //delays
-   uptube1 = fdelay(4096, (length1 * SR)/(SOUND_SPEED));
-   downtube1 = fdelay(4096, (length1 * SR)/(SOUND_SPEED));
+   uptube1 = fdelay(4096, (length1 * SR)/(TWO_SOUND_SPEED));
+   downtube1 = fdelay(4096, (length1 * SR)/(TWO_SOUND_SPEED));
 
-   uptube2 = fdelay(4096, (length2 * SR) / (SOUND_SPEED) );
-   downtube2 = fdelay(4096, (length2 * SR) / (SOUND_SPEED) );
+   uptube2 = fdelay(4096, (length2 * SR) / (TWO_SOUND_SPEED) );
+   downtube2 = fdelay(4096, (length2 * SR) / (TWO_SOUND_SPEED) );
 
 // filters
 lossesFilter = iir((b0,b1,b2,b3),(a1,a2,a3))

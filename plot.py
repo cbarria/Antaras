@@ -27,16 +27,16 @@ def read_orig(origfile):
 def main():
     z_orig, f_orig = read_orig('src/ZF.txt')
     
-    length1 = [ 13,   15, 30]
-    length2 = [ 21.4, 28, 10]
-    radius1 = [    9,  7, 5 ]
-    radius2 = [    8,  9, 10]
-    samples = 16384
+    length1 = [ 0.214  ,   0.15, 0.21 , 0.0214]
+    length2 = [ 0.13   ,   0.28, 0.13, 0.012]
+    radius1 = [ 0.08   ,   0.07, 0.09,  0.008]
+    radius2 = [ 0.09   ,   0.09, 0.08,  0.009]
+    samples = 16384*4
   
     for j in range(0, len(length1)):   
  
           os.system("./antarasplot.out" + " -length1 " + str(length1[j]) + " -length2 " + str(length2[j]) + " -radius1 " + str(radius1[j]) + " -radius2 " + str(radius2[j]) + " -n " + str(samples)) 
-          data = read('outputs.txt')
+          data = read('gen/outputs.txt')
           pressure = data[0];
           velocity = data[1];    
  
@@ -60,12 +60,15 @@ def main():
        
           z =  p/u
 
+          z = z/max(z)                #escalar entre 0-1
+          z_orig = z_orig/max(z_orig) #tambien
+
           plt.subplot(211)  
           plt.plot(freq,z)
           plt.xlim([10, 8000])
+          #plt.xscale('log')
           plt.grid(True, which="both", ls="-")
           plt.title('Impedance Faust Simulation v/s Real Instrument')
-          #plt.xaxis.set_major_locator(MaxNLocator(10))
     
           #plt.subplot(312)
           #plt.plot(freq,p)
