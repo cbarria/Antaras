@@ -1,4 +1,4 @@
-requierments:
+requirements:
 - Python: 
          Matplotlib
          Numpy
@@ -6,11 +6,11 @@ requierments:
 
 The Antara we are trying to match impedance to is described above.
 
-7599 tuyau 4 ouvert. two messuments where performend, first one from 10 to 4000Hz and
+7599 tuyau 4 ouvert. two measurements where performed, first one from 10 to 4000Hz and
 second one from 3000Hz to 8000Hz in step of 1/10 hz. Average was applied in the 1Khz zone between the
-messuers. Downsample x10 was applied to the measurments to meet simulations requierment.
+measurements. Down-sample x10 was applied to the measurements to meet simulations requirement.
 
-Geometrical Description: (dont speak french)
+Geometrical Description: (don't speak french)
 
 Diamètre de la cavité arrière a1 (mm)=18.000000
 Diamètre de la cavité avant a2 (mm)=16.000000
@@ -26,7 +26,7 @@ Radius for second cavity: 8.0     [mm]
 
 Instructions:
 
-1.- Check for the ZF.txt file generated in matlab with the antaras script. 
+1.- Check for the ZF.txt file generated in Matlab with the Antaras.m script. 
 2.- always make clean the project, if it is the first time
 3.- make plot, to compile the faust code into a C++ executable.
 4.- python plot.py, to generate graphics.
