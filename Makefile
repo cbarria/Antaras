@@ -14,7 +14,7 @@ svg:
 	faust -svg -sn antaras.dsp
 
 clean:
-	rm -rf *.so *.out *.m gen/* *-svg alsa-gtk *.png outputs.txt
+	rm -rf *.so *.out gen/* *-svg alsa-gtk 
 
 run:
 	make clean; make; make standalone; ./antaras.out 

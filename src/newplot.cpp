@@ -455,7 +455,7 @@ int main(int argc, char *argv[] )
  
     ofstream out("gen/outputs.txt");
     write(&out, out1, nbsamples);
-    write(&out, out2, nbsamples);
+    // write(&out, out2, nbsamples); velocidad de particula
     out.close();      
 
 return 0;
